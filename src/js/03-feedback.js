@@ -1,7 +1,5 @@
 import throttle from 'lodash.throttle';
 
-// const 'feedback - form - state' = 'feedback - form - state';
-
 const feedbackForm = document.querySelector('.feedback-form');
 const email = document.querySelector('input[name="email"]');
 const message = document.querySelector('texterea[name="message"]');
@@ -36,5 +34,5 @@ if (storageData) {
   message.value = storageData.message;
 }
 
-feedbackForm.addEventListner('input', throttle(saveOnRepository, 500));
-feedbackForm.addEventListner('submit', formSubmit);
+feedbackForm.addEventListener('input', throttle(saveOnRepository, 500));
+feedbackForm.addEventListener('submit', formSubmit);
